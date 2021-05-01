@@ -3,6 +3,9 @@
 *.d.ts
 node_modules
 
+## ignore commitlint.config.js
+!commitlint.config.js
+
 # CDK asset staging directory
 .cdk.staging
 cdk.out
