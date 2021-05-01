@@ -3,8 +3,13 @@
 *.d.ts
 node_modules
 
-## ignore commitlint.config.js
+# commit commitlint.config.js
 !commitlint.config.js
+
+# commit .eslintrc.js
+!.eslintrc.js
+# commit .prettier.js
+!.prettier.js
 
 # CDK asset staging directory
 .cdk.staging
