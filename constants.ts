@@ -14,4 +14,6 @@ export const RESOURCE_NAME = {
   BUCKET: "bucket",
   KEY: "key",
   TRAIL: "trail",
+  TOPIC: "topic",
+  EVENTS_RULE: "event-rule",
 };
