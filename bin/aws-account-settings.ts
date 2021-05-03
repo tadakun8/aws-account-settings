@@ -4,12 +4,22 @@ import * as cdk from "@aws-cdk/core";
 import { ServerAccessLogBucketStack } from "../lib/stacks/server-access-log-bucket-stack";
 import { createResourceName } from "../lib/util/createResourceName";
 import { RESOURCE_NAME } from "../constants";
+import { CloudTrailStack } from "../lib/stacks/cloudtrail-stack";
 
 const app = new cdk.App();
 
-new ServerAccessLogBucketStack(app, "ServerAccessLogBucketStack", {
-  stackName: createResourceName(
-    "server-access-log-bucket",
-    RESOURCE_NAME.STACK
-  ),
+const serverAccessLogBucketStack = new ServerAccessLogBucketStack(
+  app,
+  "ServerAccessLogBucketStack",
+  {
+    stackName: createResourceName(
+      "server-access-log-bucket",
+      RESOURCE_NAME.STACK
+    ),
+  }
+);
+
+new CloudTrailStack(app, "CloudTrailStack", {
+  stackName: createResourceName("cloudtrail", RESOURCE_NAME.STACK),
+  serverAccessLogBucket: serverAccessLogBucketStack.bucket,
 });

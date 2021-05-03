@@ -1,17 +1,19 @@
 import * as cdk from "@aws-cdk/core";
 import * as s3 from "@aws-cdk/aws-s3";
 
-interface BucketConstrctProps {
+interface BucketConstructProps {
   bucketName: string;
   serverAccessLogBucket?: s3.IBucket;
   serverAccessLogsPrefix?: string;
 }
 
 export class BucketConstruct extends cdk.Construct {
-  constructor(scope: cdk.Construct, id: string, props: BucketConstrctProps) {
+  public bucket: s3.IBucket;
+
+  constructor(scope: cdk.Construct, id: string, props: BucketConstructProps) {
     super(scope, id);
 
-    const bucket = new s3.Bucket(this, `${props.bucketName}`, {
+    this.bucket = new s3.Bucket(this, `${props.bucketName}`, {
       encryption: s3.BucketEncryption.KMS,
       bucketKeyEnabled: true,
       bucketName: props.bucketName,
@@ -20,6 +22,6 @@ export class BucketConstruct extends cdk.Construct {
       serverAccessLogsPrefix: props.serverAccessLogsPrefix,
     });
 
-    bucket.encryptionKey?.addAlias(`alias/${bucket.bucketName}-key`);
+    this.bucket.encryptionKey?.addAlias(`alias/${this.bucket.bucketName}-key`);
   }
 }

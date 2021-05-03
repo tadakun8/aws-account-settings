@@ -13,4 +13,5 @@ export const RESOURCE_NAME = {
   STACK: "stack",
   BUCKET: "bucket",
   KEY: "key",
+  TRAIL: "trail",
 };
