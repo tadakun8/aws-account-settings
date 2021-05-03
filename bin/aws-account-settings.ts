@@ -5,6 +5,7 @@ import { ServerAccessLogBucketStack } from "../lib/stacks/server-access-log-buck
 import { createResourceName } from "../lib/util/createResourceName";
 import { RESOURCE_NAME } from "../constants";
 import { CloudTrailStack } from "../lib/stacks/cloudtrail-stack";
+import { GuardDutyStack } from "../lib/stacks/guardduty-stack";
 
 const app = new cdk.App();
 
@@ -22,4 +23,8 @@ const serverAccessLogBucketStack = new ServerAccessLogBucketStack(
 new CloudTrailStack(app, "CloudTrailStack", {
   stackName: createResourceName("cloudtrail", RESOURCE_NAME.STACK),
   serverAccessLogBucket: serverAccessLogBucketStack.bucket,
+});
+
+new GuardDutyStack(app, "GuardDutyStack", {
+  stackName: createResourceName("guardduty", RESOURCE_NAME.STACK),
 });
