@@ -11,14 +11,14 @@
     "cdk": "cdk"
   },
   "devDependencies": {
-    "@aws-cdk/assert": "1.101.0",
+    "@aws-cdk/assert": "1.102.0",
     "@commitlint/cli": "^12.1.1",
     "@commitlint/config-conventional": "^12.1.1",
     "@types/jest": "^26.0.10",
     "@types/node": "10.17.27",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
-    "aws-cdk": "1.101.0",
+    "aws-cdk": "1.102.0",
     "eslint": "^7.25.0",
     "eslint-config-prettier": "^8.3.0",
     "husky": "^4.3.8",
@@ -30,15 +30,16 @@
     "typescript": "^3.9.9"
   },
   "dependencies": {
-    "@aws-cdk/aws-cloudtrail": "^1.101.0",
-    "@aws-cdk/aws-events": "^1.101.0",
-    "@aws-cdk/aws-events-targets": "^1.101.0",
-    "@aws-cdk/aws-guardduty": "^1.101.0",
-    "@aws-cdk/aws-iam": "^1.101.0",
-    "@aws-cdk/aws-s3": "^1.101.0",
-    "@aws-cdk/aws-sns": "^1.101.0",
-    "@aws-cdk/aws-sns-subscriptions": "^1.101.0",
-    "@aws-cdk/core": "1.101.0",
+    "@aws-cdk/aws-cloudtrail": "^1.102.0",
+    "@aws-cdk/aws-events": "^1.102.0",
+    "@aws-cdk/aws-events-targets": "^1.102.0",
+    "@aws-cdk/aws-guardduty": "^1.102.0",
+    "@aws-cdk/aws-iam": "^1.102.0",
+    "@aws-cdk/aws-kms": "^1.102.0",
+    "@aws-cdk/aws-s3": "^1.102.0",
+    "@aws-cdk/aws-sns": "^1.102.0",
+    "@aws-cdk/aws-sns-subscriptions": "^1.102.0",
+    "@aws-cdk/core": "1.102.0",
     "source-map-support": "^0.5.16"
   },
   "husky": {
