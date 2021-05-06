@@ -9,7 +9,7 @@ node_modules
 # commit .eslintrc.js
 !.eslintrc.js
 # commit .prettier.js
-!.prettier.js
+!.prettierrc.js
 
 # CDK asset staging directory
 .cdk.staging
