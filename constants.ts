@@ -16,4 +16,5 @@ export const RESOURCE_NAME = {
   TRAIL: "trail",
   TOPIC: "topic",
   EVENTS_RULE: "event-rule",
+  POLICY: "policy",
 };

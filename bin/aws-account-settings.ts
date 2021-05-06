@@ -6,6 +6,7 @@ import { createResourceName } from "../lib/util/createResourceName";
 import { RESOURCE_NAME } from "../constants";
 import { CloudTrailStack } from "../lib/stacks/cloudtrail-stack";
 import { GuardDutyStack } from "../lib/stacks/guardduty-stack";
+import { BlockUnlessMfaPolicyStack } from "../lib/stacks/block-unless-mfa-policy-stack";
 
 const app = new cdk.App();
 
@@ -27,4 +28,11 @@ new CloudTrailStack(app, "CloudTrailStack", {
 
 new GuardDutyStack(app, "GuardDutyStack", {
   stackName: createResourceName("guardduty", RESOURCE_NAME.STACK),
+});
+
+new BlockUnlessMfaPolicyStack(app, "BlockUnlessMfaPolicyStack", {
+  stackName: createResourceName(
+    "block-unless-mfa-policy",
+    RESOURCE_NAME.POLICY
+  ),
 });
