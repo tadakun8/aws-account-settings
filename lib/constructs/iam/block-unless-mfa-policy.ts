@@ -1,13 +1,13 @@
 import * as cdk from "@aws-cdk/core";
 import * as iam from "@aws-cdk/aws-iam";
-import { createResourceName } from "../util/createResourceName";
-import { RESOURCE_NAME } from "../../constants";
+import { createResourceName } from "../../util/createResourceName";
+import { RESOURCE_NAME } from "../../../constants";
 
-export class BlockUnlessMfaPolicyStack extends cdk.Stack {
+export class BlockUnlessMfaPolicyConstruct extends cdk.Construct {
   public policy: iam.ManagedPolicy;
 
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
-    super(scope, id, props);
+  constructor(scope: cdk.Construct, id: string) {
+    super(scope, id);
 
     const allowListActionsStatement = new iam.PolicyStatement({
       sid: "AllowListActions",
@@ -43,6 +43,18 @@ export class BlockUnlessMfaPolicyStack extends cdk.Stack {
       }
     });
 
+    const allowChangePasswordStatement = new iam.PolicyStatement({
+      sid: "AllowChangePassword",
+      actions: ["iam:ChangePassword"],
+      resources: ["arn:aws:iam::*:user/${aws:username}"]
+    });
+
+    const allowGetSessionToken = new iam.PolicyStatement({
+      sid: "AllowGetSessionToken",
+      actions: ["sts:GetSessionToken"],
+      resources: ["*"]
+    });
+
     const blockMostAccessUnlessSignedInWithMFAStatement = new iam.PolicyStatement({
       sid: "BlockMostAccessUnlessSignedInWithMFA",
       effect: iam.Effect.DENY,
@@ -63,12 +75,6 @@ export class BlockUnlessMfaPolicyStack extends cdk.Stack {
       }
     });
 
-    const allowChangePasswordStatement = new iam.PolicyStatement({
-      sid: "AllowChangePassword",
-      actions: ["iam:ChangePassword"],
-      resources: ["arn:aws:iam::*:user/${aws:username}"]
-    });
-
     this.policy = new iam.ManagedPolicy(this, "BlockUnlessMfaPolicy", {
       managedPolicyName: createResourceName("block-unless-mfa-policy", RESOURCE_NAME.POLICY),
       statements: [
@@ -77,7 +83,8 @@ export class BlockUnlessMfaPolicyStack extends cdk.Stack {
         allowIndividualUserToManageTheirOwnMFAStatement,
         allowIndividualUserToDeactivateOnlyTheirOwnMFAOnlyWhenUsingMFAStatement,
         blockMostAccessUnlessSignedInWithMFAStatement,
-        allowChangePasswordStatement
+        allowChangePasswordStatement,
+        allowGetSessionToken
       ]
     });
   }
