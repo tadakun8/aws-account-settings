@@ -4,10 +4,10 @@
 
 export const PREFIX = {
   PROJECT: "my",
-  PORPUSE: "settings",
+  PURPOSE: "settings",
 };
 
-export const RESOURCE_PREFIX = `${PREFIX.PROJECT}-${PREFIX.PORPUSE}`;
+export const RESOURCE_PREFIX = `${PREFIX.PROJECT}-${PREFIX.PURPOSE}`;
 
 export const RESOURCE_NAME = {
   STACK: "stack",
