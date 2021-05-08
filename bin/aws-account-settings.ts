@@ -6,7 +6,7 @@ import { createResourceName } from "../lib/util/createResourceName";
 import { RESOURCE_NAME } from "../constants";
 import { CloudTrailStack } from "../lib/stacks/cloudtrail-stack";
 import { GuardDutyStack } from "../lib/stacks/guardduty-stack";
-import { IamStack } from "../lib/stacks/ima-stack";
+import { IamStack } from "../lib/stacks/iam-stack";
 import { AwsConfigStack } from "../lib/stacks/aws-config-stack";
 import { AccessAnalyzerStack } from "../lib/stacks/access-analyzer-stack";
 
