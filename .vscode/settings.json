@@ -9,6 +9,7 @@
         "source.fixAll.eslint": true // ファイル保存時にESLintでフォーマット
     },
     "cSpell.words": [
+      "accessanalyzer",
       "commitlint",
       "eventbridge"
     ]
