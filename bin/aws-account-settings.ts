@@ -7,6 +7,7 @@ import { RESOURCE_NAME } from "../constants";
 import { CloudTrailStack } from "../lib/stacks/cloudtrail-stack";
 import { GuardDutyStack } from "../lib/stacks/guardduty-stack";
 import { IamStack } from "../lib/stacks/ima-stack";
+import { AwsConfigStack } from "../lib/stacks/aws-config-stack";
 
 const app = new cdk.App();
 
@@ -25,4 +26,9 @@ new GuardDutyStack(app, "GuardDutyStack", {
 
 new IamStack(app, "IamStack", {
   stackName: createResourceName("iam", RESOURCE_NAME.STACK)
+});
+
+new AwsConfigStack(app, "AwsConfigStack", {
+  stackName: createResourceName("aws-config", RESOURCE_NAME.STACK),
+  serverAccessLogBucket: serverAccessLogBucketStack.bucket
 });
