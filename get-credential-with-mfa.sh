@@ -24,5 +24,6 @@ MFA_PROFILE_NAME=$1-mfa
 aws --profile $MFA_PROFILE_NAME configure set aws_access_key_id $MFA_ACCESS_KEY
 aws --profile $MFA_PROFILE_NAME configure set aws_secret_access_key $MFA_SECRET_ACCESS_KEY
 aws --profile $MFA_PROFILE_NAME configure set aws_session_token $MFA_SESSION_TOKEN
+aws --profile $MFA_PROFILE_NAME configure set region $(aws configure get region --profile $1)
 
 echo "New credentials have been set successfully. (profile: $MFA_PROFILE_NAME, expiration: $MFA_EXPIRATION)"
