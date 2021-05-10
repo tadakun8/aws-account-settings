@@ -58,10 +58,10 @@ export const CONFIG_RULES: ConfigRule[] = [
   //   identifier: aws_config.ManagedRuleIdentifiers.ROOT_ACCOUNT_MFA_ENABLED,
   //   maximumExecutionFrequency: aws_config.MaximumExecutionFrequency.TWENTY_FOUR_HOURS
   // },
-  // {
-  //   configRuleName: "restricted-ssh",
-  //   identifier: aws_config.ManagedRuleIdentifiers.EC2_SECURITY_GROUPS_INCOMING_SSH_DISABLED
-  // },
+  {
+    configRuleName: "restricted-ssh",
+    identifier: aws_config.ManagedRuleIdentifiers.EC2_SECURITY_GROUPS_INCOMING_SSH_DISABLED
+  },
   // {
   //   configRuleName: "restricted-common-ports",
   //   identifier: aws_config.ManagedRuleIdentifiers.EC2_SECURITY_GROUPS_RESTRICTED_INCOMING_TRAFFIC
