@@ -43,16 +43,16 @@ export const CONFIG_RULES: ConfigRule[] = [
     configRuleName: "guardduty-enabled-centralized",
     identifier: aws_config.ManagedRuleIdentifiers.GUARDDUTY_ENABLED_CENTRALIZED,
     maximumExecutionFrequency: aws_config.MaximumExecutionFrequency.TWENTY_FOUR_HOURS
-  }
+  },
   // {
   //   configRuleName: "guardduty-non-archived-findings",
   //   identifier: aws_config.ManagedRuleIdentifiers.GUARDDUTY_NON_ARCHIVED_FINDINGS,
   //   maximumExecutionFrequency: aws_config.MaximumExecutionFrequency.TWENTY_FOUR_HOURS
   // },
-  // {
-  //   configRuleName: "iam-group-has-users-check",
-  //   identifier: aws_config.ManagedRuleIdentifiers.IAM_GROUP_HAS_USERS_CHECK
-  // },
+  {
+    configRuleName: "iam-group-has-users-check",
+    identifier: aws_config.ManagedRuleIdentifiers.IAM_GROUP_HAS_USERS_CHECK
+  }
   // {
   //   configRuleName: "root-account-mfa-enabled",
   //   identifier: aws_config.ManagedRuleIdentifiers.ROOT_ACCOUNT_MFA_ENABLED,
