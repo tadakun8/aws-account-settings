@@ -6,6 +6,7 @@ import * as s3 from "@aws-cdk/aws-s3";
 import { BucketConstruct } from "../constructs/s3/bucket";
 import { createResourceName } from "../util/createResourceName";
 import { RESOURCE_NAME } from "../../constants";
+import { CONFIG_RULES } from "../constructs/aws-config/config-rule/const";
 
 interface AwsConfigStackProps extends cdk.StackProps {
   serverAccessLogBucket: s3.IBucket;
@@ -53,5 +54,14 @@ export class AwsConfigStack extends cdk.Stack {
       }
     });
     configurationRecorder.node.addDependency(bucketConstruct);
+
+    CONFIG_RULES.forEach(configRule => {
+      new aws_config.ManagedRule(this, `${configRule.configRuleName}`, {
+        configRuleName: configRule.configRuleName,
+        identifier: configRule.identifier,
+        inputParameters: configRule.inputParameters,
+        maximumExecutionFrequency: configRule.maximumExecutionFrequency
+      });
+    });
   }
 }
