@@ -53,11 +53,11 @@ export const CONFIG_RULES: ConfigRule[] = [
     configRuleName: "iam-group-has-users-check",
     identifier: aws_config.ManagedRuleIdentifiers.IAM_GROUP_HAS_USERS_CHECK
   },
-  // {
-  //   configRuleName: "root-account-mfa-enabled",
-  //   identifier: aws_config.ManagedRuleIdentifiers.ROOT_ACCOUNT_MFA_ENABLED,
-  //   maximumExecutionFrequency: aws_config.MaximumExecutionFrequency.TWENTY_FOUR_HOURS
-  // },
+  {
+    configRuleName: "root-account-mfa-enabled",
+    identifier: aws_config.ManagedRuleIdentifiers.ROOT_ACCOUNT_MFA_ENABLED,
+    maximumExecutionFrequency: aws_config.MaximumExecutionFrequency.TWENTY_FOUR_HOURS
+  },
   {
     configRuleName: "restricted-ssh",
     identifier: aws_config.ManagedRuleIdentifiers.EC2_SECURITY_GROUPS_INCOMING_SSH_DISABLED
