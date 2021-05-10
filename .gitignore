@@ -10,7 +10,8 @@ node_modules
 !.eslintrc.js
 # commit .prettier.js
 !.prettierrc.js
-
+# ignore .envrc used by direnv
+.envrc 
 # CDK asset staging directory
 .cdk.staging
 cdk.out
