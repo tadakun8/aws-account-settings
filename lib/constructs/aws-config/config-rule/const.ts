@@ -52,7 +52,7 @@ export const CONFIG_RULES: ConfigRule[] = [
   {
     configRuleName: "iam-group-has-users-check",
     identifier: aws_config.ManagedRuleIdentifiers.IAM_GROUP_HAS_USERS_CHECK
-  }
+  },
   // {
   //   configRuleName: "root-account-mfa-enabled",
   //   identifier: aws_config.ManagedRuleIdentifiers.ROOT_ACCOUNT_MFA_ENABLED,
@@ -66,11 +66,11 @@ export const CONFIG_RULES: ConfigRule[] = [
   //   configRuleName: "restricted-common-ports",
   //   identifier: aws_config.ManagedRuleIdentifiers.EC2_SECURITY_GROUPS_RESTRICTED_INCOMING_TRAFFIC
   // },
-  // {
-  //   configRuleName: "multi-region-cloudtrail-enabled",
-  //   identifier: aws_config.ManagedRuleIdentifiers.CLOUDTRAIL_MULTI_REGION_ENABLED,
-  //   maximumExecutionFrequency: aws_config.MaximumExecutionFrequency.TWENTY_FOUR_HOURS
-  // },
+  {
+    configRuleName: "multi-region-cloudtrail-enabled",
+    identifier: aws_config.ManagedRuleIdentifiers.CLOUDTRAIL_MULTI_REGION_ENABLED,
+    maximumExecutionFrequency: aws_config.MaximumExecutionFrequency.TWENTY_FOUR_HOURS
+  }
   // {
   //   configRuleName: "kms-cmk-not-scheduled-for-deletion",
   //   identifier: aws_config.ManagedRuleIdentifiers.KMS_CMK_NOT_SCHEDULED_FOR_DELETION
