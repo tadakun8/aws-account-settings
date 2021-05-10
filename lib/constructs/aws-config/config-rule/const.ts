@@ -54,6 +54,12 @@ export const CONFIG_RULES: ConfigRule[] = [
     identifier: aws_config.ManagedRuleIdentifiers.IAM_GROUP_HAS_USERS_CHECK
   },
   {
+    configRuleName: "iam-user-unused-credentials-check",
+    identifier: aws_config.ManagedRuleIdentifiers.IAM_USER_UNUSED_CREDENTIALS_CHECK,
+    inputParameters: { maxCredentialUsageAge: 90 },
+    maximumExecutionFrequency: aws_config.MaximumExecutionFrequency.TWENTY_FOUR_HOURS
+  },
+  {
     configRuleName: "root-account-mfa-enabled",
     identifier: aws_config.ManagedRuleIdentifiers.ROOT_ACCOUNT_MFA_ENABLED,
     maximumExecutionFrequency: aws_config.MaximumExecutionFrequency.TWENTY_FOUR_HOURS
@@ -75,10 +81,4 @@ export const CONFIG_RULES: ConfigRule[] = [
   //   configRuleName: "kms-cmk-not-scheduled-for-deletion",
   //   identifier: aws_config.ManagedRuleIdentifiers.KMS_CMK_NOT_SCHEDULED_FOR_DELETION
   // },
-  // {
-  //   configRuleName: "iam-user-unused-credentials-check",
-  //   identifier: aws_config.ManagedRuleIdentifiers.IAM_USER_UNUSED_CREDENTIALS_CHECK,
-  //   inputParameters: { maxCredentialUsageAge: 90 },
-  //   maximumExecutionFrequency: aws_config.MaximumExecutionFrequency.TWENTY_FOUR_HOURS
-  // }
 ];
