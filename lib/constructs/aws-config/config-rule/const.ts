@@ -62,10 +62,10 @@ export const CONFIG_RULES: ConfigRule[] = [
     configRuleName: "restricted-ssh",
     identifier: aws_config.ManagedRuleIdentifiers.EC2_SECURITY_GROUPS_INCOMING_SSH_DISABLED
   },
-  // {
-  //   configRuleName: "restricted-common-ports",
-  //   identifier: aws_config.ManagedRuleIdentifiers.EC2_SECURITY_GROUPS_RESTRICTED_INCOMING_TRAFFIC
-  // },
+  {
+    configRuleName: "restricted-common-ports",
+    identifier: aws_config.ManagedRuleIdentifiers.EC2_SECURITY_GROUPS_RESTRICTED_INCOMING_TRAFFIC
+  },
   {
     configRuleName: "multi-region-cloudtrail-enabled",
     identifier: aws_config.ManagedRuleIdentifiers.CLOUDTRAIL_MULTI_REGION_ENABLED,
