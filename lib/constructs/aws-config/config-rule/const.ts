@@ -13,7 +13,7 @@ export const CONFIG_RULES: ConfigRule[] = [
     identifier: aws_config.ManagedRuleIdentifiers.ACCESS_KEYS_ROTATED,
     inputParameters: { maxAccessKeyAge: 90 },
     maximumExecutionFrequency: aws_config.MaximumExecutionFrequency.TWENTY_FOUR_HOURS
-  }
+  },
   // {
   //   configRuleName: "cloudformation-stack-drift-detection-check",
   //   identifier: aws_config.ManagedRuleIdentifiers.CLOUDFORMATION_STACK_DRIFT_DETECTION_CHECK,
@@ -24,11 +24,11 @@ export const CONFIG_RULES: ConfigRule[] = [
   //   identifier: aws_config.ManagedRuleIdentifiers.CLOUDFORMATION_STACK_NOTIFICATION_CHECK,
   //   inputParameters: { snsTopic1: snsTopic.arn }
   // },
-  // {
-  //   configRuleName: "cloud-trail-enabled",
-  //   identifier: aws_config.ManagedRuleIdentifiers.CLOUD_TRAIL_ENABLED,
-  //   maximumExecutionFrequency: aws_config.MaximumExecutionFrequency.TWENTY_FOUR_HOURS
-  // }
+  {
+    configRuleName: "cloud-trail-enabled",
+    identifier: aws_config.ManagedRuleIdentifiers.CLOUD_TRAIL_ENABLED,
+    maximumExecutionFrequency: aws_config.MaximumExecutionFrequency.TWENTY_FOUR_HOURS
+  }
   // {
   //   configRuleName: "cloud-trail-encryption-enabled",
   //   identifier: aws_config.ManagedRuleIdentifiers.CLOUD_TRAIL_ENCRYPTION_ENABLED,
