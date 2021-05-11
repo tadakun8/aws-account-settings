@@ -85,5 +85,9 @@ export const CONFIG_RULES: ConfigRule[] = [
     // This rule is not defined in the aws_config.ManagedRuleIdentifiers.
     // So, I wrote this identifier directly.
     identifier: "S3_BUCKET_LEVEL_PUBLIC_ACCESS_PROHIBITED"
+  },
+  {
+    configRuleName: "vpc-default-security-group-closed",
+    identifier: aws_config.ManagedRuleIdentifiers.VPC_DEFAULT_SECURITY_GROUP_CLOSED
   }
 ];
