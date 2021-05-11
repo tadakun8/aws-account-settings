@@ -79,5 +79,11 @@ export const CONFIG_RULES: ConfigRule[] = [
   {
     configRuleName: "s3-default-encryption-kms",
     identifier: aws_config.ManagedRuleIdentifiers.S3_DEFAULT_ENCRYPTION_KMS
+  },
+  {
+    configRuleName: "s3-bucket-level-public-access-prohibited",
+    // This rule is not defined in the aws_config.ManagedRuleIdentifiers.
+    // So, I wrote this identifier directly.
+    identifier: "S3_BUCKET_LEVEL_PUBLIC_ACCESS_PROHIBITED"
   }
 ];
