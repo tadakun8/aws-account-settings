@@ -34,21 +34,11 @@ export const CONFIG_RULES: ConfigRule[] = [
     identifier: aws_config.ManagedRuleIdentifiers.CLOUD_TRAIL_ENCRYPTION_ENABLED,
     maximumExecutionFrequency: aws_config.MaximumExecutionFrequency.TWENTY_FOUR_HOURS
   },
-  // {
-  //   configRuleName: "cmk-backing-key-rotation-enabled",
-  //   identifier: aws_config.ManagedRuleIdentifiers.CMK_BACKING_KEY_ROTATION_ENABLED,
-  //   maximumExecutionFrequency: aws_config.MaximumExecutionFrequency.TWENTY_FOUR_HOURS
-  // },
   {
     configRuleName: "guardduty-enabled-centralized",
     identifier: aws_config.ManagedRuleIdentifiers.GUARDDUTY_ENABLED_CENTRALIZED,
     maximumExecutionFrequency: aws_config.MaximumExecutionFrequency.TWENTY_FOUR_HOURS
   },
-  // {
-  //   configRuleName: "guardduty-non-archived-findings",
-  //   identifier: aws_config.ManagedRuleIdentifiers.GUARDDUTY_NON_ARCHIVED_FINDINGS,
-  //   maximumExecutionFrequency: aws_config.MaximumExecutionFrequency.TWENTY_FOUR_HOURS
-  // },
   {
     configRuleName: "iam-group-has-users-check",
     identifier: aws_config.ManagedRuleIdentifiers.IAM_GROUP_HAS_USERS_CHECK
@@ -77,8 +67,4 @@ export const CONFIG_RULES: ConfigRule[] = [
     identifier: aws_config.ManagedRuleIdentifiers.CLOUDTRAIL_MULTI_REGION_ENABLED,
     maximumExecutionFrequency: aws_config.MaximumExecutionFrequency.TWENTY_FOUR_HOURS
   }
-  // {
-  //   configRuleName: "kms-cmk-not-scheduled-for-deletion",
-  //   identifier: aws_config.ManagedRuleIdentifiers.KMS_CMK_NOT_SCHEDULED_FOR_DELETION
-  // },
 ];
