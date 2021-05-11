@@ -66,5 +66,10 @@ export const CONFIG_RULES: ConfigRule[] = [
     configRuleName: "multi-region-cloudtrail-enabled",
     identifier: aws_config.ManagedRuleIdentifiers.CLOUDTRAIL_MULTI_REGION_ENABLED,
     maximumExecutionFrequency: aws_config.MaximumExecutionFrequency.TWENTY_FOUR_HOURS
+  },
+  {
+    configRuleName: "iam-password-policy",
+    identifier: aws_config.ManagedRuleIdentifiers.IAM_PASSWORD_POLICY,
+    maximumExecutionFrequency: aws_config.MaximumExecutionFrequency.TWENTY_FOUR_HOURS
   }
 ];
