@@ -71,5 +71,9 @@ export const CONFIG_RULES: ConfigRule[] = [
     configRuleName: "iam-password-policy",
     identifier: aws_config.ManagedRuleIdentifiers.IAM_PASSWORD_POLICY,
     maximumExecutionFrequency: aws_config.MaximumExecutionFrequency.TWENTY_FOUR_HOURS
+  },
+  {
+    configRuleName: "s3-account-level-public-access-blocks",
+    identifier: aws_config.ManagedRuleIdentifiers.S3_ACCOUNT_LEVEL_PUBLIC_ACCESS_BLOCKS
   }
 ];
